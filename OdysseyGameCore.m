@@ -29,7 +29,6 @@
 #import "OEOdyssey2SystemResponderClient.h"
 
 #import <OpenEmuBase/OERingBuffer.h>
-#import <OpenGL/gl.h>
 #include <IOKit/hid/IOHIDUsageTables.h>
 
 #include "crc32.h"
@@ -533,14 +532,14 @@ OdysseyGameCore *current;
     return mbmp;
 }
 
-- (GLenum)pixelFormat
+- (uint32_t)pixelFormat
 {
-    return GL_RGB;
+    return OEPixelFormat_RGB;
 }
 
-- (GLenum)pixelType
+- (uint32_t)pixelType
 {
-    return GL_UNSIGNED_SHORT_5_6_5;
+    return OEPixelType_UNSIGNED_SHORT_5_6_5;
 }
 
 - (NSTimeInterval)frameInterval
